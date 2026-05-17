@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Ratnesh Gupta | QA Tester Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #020617;
+      color: white;
+      display: flex;
+    }
+
+    body::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    body::-webkit-scrollbar-thumb {
+      background: #00ffae;
+      border-radius: 20px;
+    }
+
+    /* SIDEBAR */
+
+    .sidebar {
+      width: 260px;
+      height: 100vh;
+      position: fixed;
+      left: 0;
+      top: 0;
+      background: #06111f;
+      border-right: 1px solid rgba(255, 255, 255, 0.05);
+      padding: 30px 20px;
+      overflow-y: auto;
+    }
+
+    .logo-box {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .logo {
+      width: 70px;
+      height: 70px;
+      border-radius: 18px;
+      background: linear-gradient(to right, #00ffae, #00c3ff);
+      margin: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 28px;
+      font-weight: bold;
+      color: black;
+      margin-bottom: 15px;
+      box-shadow: 0 0 25px rgba(0, 255, 174, 0.3);
+    }
+
+    .logo-box h2 {
+      font-size: 24px;
+    }
+
+    .logo-box p {
+      color: #94a3b8;
+      margin-top: 5px;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      margin-top: 40px;
+    }
+
+    .sidebar ul li {
+      margin-bottom: 15px;
+    }
+
+    .sidebar ul li a {
+      text-decoration: none;
+      color: white;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 18px;
+      border-radius: 14px;
+      transition: 0.3s;
+    }
+
+    .sidebar ul li a:hover {
+      background: rgba(0, 255, 174, 0.12);
+      color: #00ffae;
+    }
+
+    .sidebar ul li a i {
+      font-size: 18px;
+    }
+
+    .social-icons {
+      margin-top: 40px;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .social-icons a {
+      width: 45px;
+      height: 45px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.05);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .social-icons a:hover {
+      background: #00ffae;
+      color: black;
+      transform: translateY(-4px);
+    }
+
+    .resume-btn {
+      margin-top: 35px;
+      text-align: center;
+    }
+
+    .resume-btn a {
+      display: inline-block;
+      padding: 14px 25px;
+      background: linear-gradient(to right, #00ffae, #00c3ff);
+      color: black;
+      border-radius: 14px;
+      text-decoration: none;
+      font-weight: 600;
+      box-shadow: 0 0 20px rgba(0, 255, 174, 0.25);
+    }
+
+    /* MAIN */
+
+    .main {
+      margin-left: 260px;
+      width: calc(100% - 260px);
+      padding: 35px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 35px;
+      align-items: center;
+      margin-bottom: 35px;
+    }
+
+    .hero-text h4 {
+      color: #00ffae;
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+
+    .hero-text h1 {
+      font-size: 75px;
+      line-height: 1.1;
+      margin-bottom: 18px;
+    }
+
+    .hero-text h2 {
+      color: #00ffae;
+      font-size: 38px;
+      margin-bottom: 20px;
+    }
+
+    .hero-text p {
+      color: #cbd5e1;
+      line-height: 1.9;
+      max-width: 700px;
+    }
+
+    .hero-buttons {
+      margin-top: 35px;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 15px 30px;
+      border-radius: 14px;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .btn-primary {
+      background: linear-gradient(to right, #00ffae, #00c3ff);
+      color: black;
+      box-shadow: 0 0 25px rgba(0, 255, 174, 0.25);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 1px solid #00ffae;
+      color: #00ffae;
+    }
+
+    .btn:hover {
+      transform: translateY(-5px);
+    }
+
+    .hero-image {
+      display: flex;
+      justify-content: center;
+    }
+
+    .image-circle {
+      width: 420px;
+      height: 420px;
+      border-radius: 50%;
+      padding: 8px;
+      background: linear-gradient(to right, #00ffae, #00c3ff);
+      box-shadow: 0 0 60px rgba(0, 255, 174, 0.4);
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .image-circle img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 8px solid #020617;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(-15px);
+      }
+
+      100% {
+        transform: translateY(0px);
+      }
+    }
+
+    /* CARDS */
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+      margin-top: 25px;
+    }
+
+    .card {
+      background: rgba(8, 15, 28, 0.95);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 24px;
+      padding: 30px;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(0, 255, 174, 0.4);
+      box-shadow: 0 0 30px rgba(0, 255, 174, 0.1);
+    }
+
+    .card h2 {
+      margin-bottom: 25px;
+      color: #00ffae;
+      font-size: 30px;
+    }
+
+    .card p {
+      color: #cbd5e1;
+      line-height: 1.8;
+    }
+
+    /* SKILLS */
+
+    .skill {
+      margin-bottom: 24px;
+    }
+
+    .skill-info {
+      margin-bottom: 10px;
+      font-weight: 500;
+    }
+
+    .skill-bar {
+      width: 100%;
+      height: 10px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 30px;
+      overflow: hidden;
+    }
+
+    .skill-fill {
+      width: 85%;
+      height: 100%;
+      background: linear-gradient(to right, #00ffae, #00c3ff);
+      border-radius: 30px;
+    }
+
+    /* EXPERIENCE */
+
+    .timeline-item {
+      margin-bottom: 30px;
+      border-left: 3px solid #00ffae;
+      padding-left: 20px;
+    }
+
+    .timeline-item h3 {
+      color: #00ffae;
+      margin-bottom: 10px;
+    }
+
+    .timeline-item small {
+      color: #94a3b8;
+      display: block;
+      margin-bottom: 12px;
+    }
+
+    /* CONTACT */
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .contact-box {
+      background: rgba(255, 255, 255, 0.04);
+      padding: 20px;
+      border-radius: 18px;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .contact-box:hover {
+      background: rgba(0, 255, 174, 0.08);
+    }
+
+    .contact-box i {
+      font-size: 28px;
+      color: #00ffae;
+      margin-bottom: 12px;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 35px;
+      color: #94a3b8;
+      padding-bottom: 20px;
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width: 1100px) {
+
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-text {
+        text-align: center;
+      }
+
+      .hero-buttons {
+        justify-content: center;
+      }
+
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .image-circle {
+        width: 300px;
+        height: 300px;
+      }
+
+      .hero-text h1 {
+        font-size: 55px;
+      }
+    }
+
+    @media(max-width: 900px) {
+
+      body {
+        flex-direction: column;
+      }
+
+      .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+      }
+
+      .main {
+        margin-left: 0;
+        width: 100%;
+      }
+
+      .sidebar ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .sidebar ul li {
+        margin: 8px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- SIDEBAR -->
+
+  <div class="sidebar">
+
+    <div class="logo-box">
+
+      <div class="logo">RG</div>
+
+      <h2>Ratnesh Gupta</h2>
+
+      <p>Software Tester</p>
+
+    </div>
+
+    <ul>
+
+      <li><a href="#"><i class="fa-solid fa-house"></i> Home</a></li>
+
+      <li><a href="#about"><i class="fa-solid fa-user"></i> About</a></li>
+
+      <li><a href="#skills"><i class="fa-solid fa-code"></i> Skills</a></li>
+
+      <li><a href="#experience"><i class="fa-solid fa-briefcase"></i> Experience</a></li>
+
+      <li><a href="#projects"><i class="fa-solid fa-folder"></i> Projects</a></li>
+
+      <li><a href="#certifications"><i class="fa-solid fa-award"></i> Certifications</a></li>
+
+      <li><a href="#education"><i class="fa-solid fa-graduation-cap"></i> Education</a></li>
+
+      <li><a href="#contact"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+
+    </ul>
+
+    <div class="social-icons">
+
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+
+      <a href="#"><i class="fab fa-github"></i></a>
+
+      <a href="#"><i class="fa-solid fa-envelope"></i></a>
+
+    </div>
+
+    <div class="resume-btn">
+
+      <a href="./resume/ratnesh__resume.pdf" download>
+        Download Resume
+      </a>
+
+    </div>
+
+  </div>
+
+  <!-- MAIN -->
+
+  <div class="main">
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+      <div class="hero-text">
+
+        <h4>Hello, I'm 👋</h4>
+
+        <h1>Ratnesh Gupta</h1>
+
+        <h2>Software Tester / QA Engineer</h2>
+
+        <p>
+          Manual Testing professional with hands-on experience in Functional Testing,
+          Regression Testing, Smoke Testing, API Testing, and Bug Reporting.
+          Passionate about delivering high-quality software and ensuring
+          best user experience.
+        </p>
+
+        <div class="hero-buttons">
+
+          <button class="btn btn-primary">
+            View My Work
+          </button>
+
+          <button class="btn btn-outline">
+            Contact Me
+          </button>
+
+        </div>
+
+      </div>
+
+      <div class="hero-image">
+
+        <div class="image-circle">
+
+          <img src="images/011.png" alt="Ratnesh Gupta">
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ABOUT + SKILLS -->
+
+    <div class="grid-2">
+
+      <div class="card" id="about">
+
+        <h2>About Me</h2>
+
+        <p>
+          I am a detail-oriented and motivated Software Tester with strong
+          foundation in Manual Testing, SDLC, STLC, and testing methodologies.
+          I enjoy identifying defects, improving software quality,
+          and ensuring smooth user experience.
+        </p>
+
+      </div>
+
+      <div class="card" id="skills">
+
+        <h2>Technical Skills</h2>
+
+        <div class="skill">
+          <div class="skill-info">Manual Testing</div>
+          <div class="skill-bar">
+            <div class="skill-fill"></div>
+          </div>
+        </div>
+
+        <div class="skill">
+          <div class="skill-info">Functional Testing</div>
+          <div class="skill-bar">
+            <div class="skill-fill"></div>
+          </div>
+        </div>
+
+        <div class="skill">
+          <div class="skill-info">Regression Testing</div>
+          <div class="skill-bar">
+            <div class="skill-fill"></div>
+          </div>
+        </div>
+
+        <div class="skill">
+          <div class="skill-info">API Testing (Postman)</div>
+          <div class="skill-bar">
+            <div class="skill-fill"></div>
+          </div>
+        </div>
+
+        <div class="skill">
+          <div class="skill-info">Selenium (Java)</div>
+          <div class="skill-bar">
+            <div class="skill-fill"></div>
+          </div>
+        </div>
+
+        <div class="skill">
+          <div class="skill-info">JIRA</div>
+          <div class="skill-bar">
+            <div class="skill-fill"></div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- EXPERIENCE + PROJECTS -->
+
+    <div class="grid-2">
+
+      <div class="card" id="experience">
+
+        <h2>Experience</h2>
+
+        <div class="timeline-item">
+
+          <h3>Infosys</h3>
+
+          <small>Software Testing Intern | Jul 2025 - Present</small>
+
+          <p>
+            Worked on Manual Testing, Functional Testing,
+            Regression Testing, Smoke Testing,
+            Test Case Design, and Defect Management.
+          </p>
+
+        </div>
+
+        <div class="timeline-item">
+
+          <h3>Tech Fusion Era</h3>
+
+          <small>Frontend Developer Intern | Apr 2025 - Jun 2025</small>
+
+          <p>
+            Learned HTML, CSS, and basic JavaScript concepts.
+            Gained hands-on experience in responsive webpage creation.
+          </p>
+
+        </div>
+
+      </div>
+
+      <div class="card" id="projects">
+
+        <h2>Projects</h2>
+
+        <div class="timeline-item">
+
+          <h3>Virtual Management System</h3>
+
+          <p>
+            Executed 50+ manual test cases for functional,
+            smoke, and regression testing.
+            Reported defects using JIRA.
+          </p>
+
+        </div>
+
+        <div class="timeline-item">
+
+          <h3>Infosys Assessment Platform</h3>
+
+          <p>
+            Performed functional and smoke testing on
+            login workflows, validations, and UI behavior.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- CERTIFICATIONS + EDUCATION -->
+
+    <div class="grid-2">
+
+      <div class="card" id="certifications">
+
+        <h2>Certifications</h2>
+
+        <div class="timeline-item">
+
+          <h3>Testing Basics & Test Management</h3>
+
+          <p>Infosys Lex Certification</p>
+
+        </div>
+
+        <div class="timeline-item">
+
+          <h3>Selenium Basics</h3>
+
+          <p>Infosys Lex Certification</p>
+
+        </div>
+
+      </div>
+
+      <div class="card" id="education">
+
+        <h2>Education</h2>
+
+        <div class="timeline-item">
+
+          <h3>B.Tech - Computer Science Engineering</h3>
+
+          <small>
+            Prestige Institute Of Engineering Management and Research, Indore
+          </small>
+
+          <p>Graduated: 2024</p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- CONTACT -->
+
+    <div class="card" id="contact">
+
+      <h2>Contact Me</h2>
+
+      <div class="contact-grid">
+
+        <div class="contact-box">
+
+          <i class="fa-solid fa-phone"></i>
+
+          <p>+91 6266757690</p>
+
+        </div>
+
+        <div class="contact-box">
+
+          <i class="fa-solid fa-envelope"></i>
+
+          <p>ritikgupta9059@gmail.com</p>
+
+        </div>
+
+        <div class="contact-box">
+
+          <i class="fa-brands fa-linkedin-in"></i>
+
+          <p>LinkedIn Profile</p>
+
+        </div>
+
+        <div class="contact-box">
+
+          <i class="fa-solid fa-location-dot"></i>
+
+          <p>Chandigarh, India</p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <footer>
+      © 2026 Ratnesh Gupta | QA Tester Portfolio
+    </footer>
+
+  </div>
+
+</body>
+
+</html>
